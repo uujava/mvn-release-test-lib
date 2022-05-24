@@ -37,8 +37,8 @@ jobs:
 
       - name: Adjust Git Config
         run: |
-        git config --global user.email "uujava@gmail.com"
-        git config --global user.name "Uujava Github Action"
+          git config --global user.email "uujava@gmail.com"
+          git config --global user.name "Uujava Github Action"
 
       - name: Release
         run: mvn --batch-mode release:prepare release:perform -Dtag="release-${SOURCE_TAG}" -DreleaseVersion=$SOURCE_TAG -DdevelopmentVersion=1.0-SNAPSHOT
