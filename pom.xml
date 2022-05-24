@@ -23,8 +23,8 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
+<!--                    <tagNameFormat>v@{project.version}</tagNameFormat>-->
+<!--                    <autoVersionSubmodules>true</autoVersionSubmodules>-->
                 </configuration>
             </plugin>
         </plugins>
