@@ -26,10 +26,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Configure Maven settings
-        env:
-          M2_SETTINGS: ${{ secrets.M2_SETTINGS }}
-        run: printf "$M2_SETTINGS" > ~/.m2/settings.xml
+#      - name: Configure Maven settings
+#        env:
+#          M2_SETTINGS: ${{ secrets.M2_SETTINGS }}
+#        run: printf "$M2_SETTINGS" > ~/.m2/settings.xml
 
       - name: Tag name
         id: tag_name
@@ -37,3 +37,5 @@ jobs:
 
       - name: Release
         run: mvn --batch-mode release:prepare release:perform -Dtag="release-${SOURCE_TAG}" -DreleaseVersion=$SOURCE_TAG -DdevelopmentVersion=1.0-SNAPSHOT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
