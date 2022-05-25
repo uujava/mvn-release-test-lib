@@ -39,9 +39,9 @@ jobs:
         run: |
           git config --global user.email "uujava@gmail.com"
           git config --global user.name "Uujava Github Action"
-          git switch -c main
+          git switch -c ${{ steps.tag_name.outputs.SOURCE_TAG }}
 
       - name: Release
-        run: mvn --batch-mode release:prepare release:perform -Dtag="release-${SOURCE_TAG}" -DreleaseVersion=$SOURCE_TAG -DdevelopmentVersion=1.0-SNAPSHOT -Dusername=${{ secrets.PAT }}
+        run: mvn --batch-mode release:prepare release:perform -Dtag="release-${{ steps.tag_name.outputs.SOURCE_TAG }}" -DreleaseVersion="${{ steps.tag_name.outputs.SOURCE_TAG }}" -DdevelopmentVersion=1.0-SNAPSHOT -Dusername=${{ secrets.PAT }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
