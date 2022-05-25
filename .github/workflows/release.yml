@@ -44,3 +44,5 @@ jobs:
 
       - name: Release
         run: mvn --batch-mode release:prepare release:perform -Dtag="release-${SOURCE_TAG}" -DreleaseVersion=$SOURCE_TAG -DdevelopmentVersion=1.0-SNAPSHOT -Dusername=${{ secrets.PAT }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
