@@ -25,6 +25,7 @@
                 <configuration>
 <!--                    <tagNameFormat>v@{project.version}</tagNameFormat>-->
 <!--                    <autoVersionSubmodules>true</autoVersionSubmodules>-->
+<!--                    <scmCommentPrefix>[ci skip]</scmCommentPrefix>-->
                 </configuration>
             </plugin>
         </plugins>
