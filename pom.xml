@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <git.repository>uujava/mvn-release-test-prj</git.repository>
+        <git.repository>uujava/mvn-release-test-lib</git.repository>
         <project.scm.id>github</project.scm.id>
     </properties>
     <build>
